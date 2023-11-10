@@ -62,6 +62,8 @@ int main(){
         printf("particula %d = %d y %lf\n", i, entrada[i].posicion, entrada[i].energia);
     }
     
+    
+
    // for(int i = 0; i < part ; i++ ){
     //    if (entrada[i].posicion == )
    // }
