@@ -9,5 +9,5 @@ typedef struct particulas{
     double energia;
 } particulas;
 
-void calcularEnerg(particulas entrada, particulas salida, int N, int chunk);
+void calcularEnerg(particulas * entrada, particulas * salida, int N, int chunk);
 

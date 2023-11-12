@@ -9,7 +9,8 @@
 // Descripción: Valida parametros de entrada e invoca a broker con execv
 int main(int argc, char *argv[]){
     // Tienen que ser 5 o 6 argumentos (-b)
-    if(argc < 5 || argc > 6){
+    //./lab2 -N 5 -P 3 -i input.txt -o output.txt -c 10 -D
+    if(argc < 5 /*|| argc > 6*/){
         printf("[Lab2] Argumentos insuficientes.\n");
         exit(1);
     }
@@ -51,6 +52,13 @@ int main(int argc, char *argv[]){
         }
     }
 
+    printf("N: %d\n", N);
+    printf("P: %d\n", wkrs);
+    printf("i: %s\n", archEntrada);
+    printf("o: %s\n", archSalida);
+    printf("c: %d\n", chunks);
+    printf("D: %d\n", flagD);
+
     if(chunks <= 0 || wkrs <= 0){
         printf("Valores de chunk y workers invalidos.\n");
         exit(1);
@@ -79,8 +87,8 @@ int main(int argc, char *argv[]){
             archSalida,
             c_str, 
             flagD ? "1" : "0",
-            NULL};
-
+            NULL
+        };
         // Ejecutar broker
         execv(argumentos[0], argumentos);
 
